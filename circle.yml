@@ -1,0 +1,18 @@
+machine:
+  environment:
+    XCODE_SCHEME: CircleCi
+    XCODE_WORKSPACE: CircleCi.xcworkspace
+    DEVELOPER_NAME: 'iPhone Developer: Azim Hemani (TNG6V49C8F)'
+    APPNAME: CircleCi
+    PROFILE_UUID: Testapp
+    TESTFLIGHT_DIST_LIST: your-dist-list-name
+dependencies:
+  override:
+    - pod install:
+        timeout: 300
+deployment:
+  testflight:
+    branch: master
+    commands:
+      - ./scripts/add-key.sh
+      - ./scripts/testflight.sh
