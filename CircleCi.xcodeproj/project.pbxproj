@@ -316,6 +316,7 @@
 				A507A0FC1EEAA95F0013E8D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
