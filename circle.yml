@@ -1,5 +1,3 @@
 test:
 override:
-set -o pipefail && xcodebuild -workspace 'CircleCi.xcworkspace' -scheme 'CircleCi' clean build test -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest' CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= PROVISIONING_PROFILE= | tee $CIRCLE_ARTIFACTS/xcode_raw.log | xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
-
-
+- set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace 'CircleCi.xcworkspace' -scheme 'CircleCi' -configuration 'Test' -destination 'platform=iOS Simulator,OS=10.0,name=iPhone 6' -enableCodeCoverage YES build test | xcpretty
