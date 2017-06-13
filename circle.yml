@@ -1,5 +1,5 @@
 test:
 override:
-- set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace 'CircleCi.xcworkspace' -scheme 'CircleCi' -configuration 'Test' -destination 'platform=iOS Simulator,OS=10.0,name=iPhone 6' -enableCodeCoverage YES build test | xcpretty
+- set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace './CircleCi.xcworkspace' -scheme 'CircleCi' -configuration 'Test' -destination 'platform=iOS Simulator,OS=10.0,name=iPhone 6' -enableCodeCoverage YES build test | xcpretty
 
 
