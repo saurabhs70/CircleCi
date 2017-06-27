@@ -6,5 +6,6 @@ target 'CircleCi' do
   # use_frameworks!
 
   # Pods for CircleCi
-
+  #pod 'Google/Analytics'
+  #pod 'AFNetworking', '~> 3.0'
 end
